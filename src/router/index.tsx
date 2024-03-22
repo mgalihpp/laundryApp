@@ -1,15 +1,16 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Splash, Akun, Pesanan} from '../pages';
-import {RootStackParamList, TabStackParamList} from '../../types';
+import {Home, Splash, Akun, Pesanan} from '~/pages';
+import {RootStackParamList, TabStackParamList} from 'types';
+import {BottomNavigator} from '~/components';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<TabStackParamList>();
 
 const MainApp = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
       <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
       <Tab.Screen
         name="Pesanan"

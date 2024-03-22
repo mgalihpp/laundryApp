@@ -3,7 +3,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Beranda</Text>
     </View>
   );
@@ -11,4 +11,9 @@ const Home = () => {
 
 export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#dfdfdf',
+    flex: 1,
+  },
+});
